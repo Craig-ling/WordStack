@@ -142,10 +142,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /* This method begins the game by clearing the linear layouts. Then, two words are randomly
-     * chosen from the list of available words. THere is a condition to ensure the words are not
+     * chosen from the list of available words. There is a condition to ensure the words are not
      * identical. The scrambled word is concatenated by randomly choosing a character from
      * either word. When all the characters of a word have been used up, the remaining letters
-     * from the second word are added. Lastly an array of leter tiles is created to store the
+     * from the other word are added. Lastly an array of letter tiles is created to store the
      * characters as letterTile objects.*/
     public boolean onStartGame(View view) {
         TextView messageBox = (TextView) findViewById(R.id.message_box);
@@ -224,8 +224,8 @@ public class MainActivity extends AppCompatActivity {
             letterTArray[i] = new LetterTile(this, scramWord.charAt(i));
         }
 
-        // For the record, the site didn't ask me to implement the push method yet... But
-        // told me to push onto stacked layout. I r confused.
+        // Pushes each character from the scrambled word onto the stack layout that is
+        // visible to the user.
         for (int j = scramWordSize - 1; j >= 0; j--) {
             stackedLayout.push(letterTArray[j]);
         }
